@@ -1,6 +1,8 @@
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.Test;
 
+import java.io.File;
+
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
@@ -8,6 +10,7 @@ public class FillFormTest {
     @Test
     void successfulSearchTest() {
         Configuration.holdBrowserOpen = true;
+        Configuration.browserSize = "1920x1080";
         Configuration.pageLoadTimeout = 1200000;
         open("https://demoqa.com/automation-practice-form");
         $("#firstName").setValue("Egor");
@@ -23,5 +26,12 @@ public class FillFormTest {
         $x("//div[@class='subjects-auto-complete__value-container subjects-auto-complete__value-container--is-multi css-1hwfws3']").click();
         $("#subjectsInput").setValue("Math").pressEnter();
         //$x("//div[@class='subjects-auto-complete__value-container subjects-auto-complete__value-container--is-multi css-1hwfws3']").selectOptionContainingText("Math");
+        $(byText("Music")).click();
+        File fileToUpload = new File("src/test/java/Resourses/1653613466_10-funart-pro-p-krisa-za-kompom-krasivo-foto-10.jpg");
+        $("#uploadPicture").uploadFile(fileToUpload);
+        $("#currentAddress").setValue("Гравство Капибариуса");
+        $("#react-select-3-input").setValue("Haryana").pressEnter();
+        $("#react-select-4-input").setValue("Karnal").pressEnter();
+        $("#submit").click();
     }
 }

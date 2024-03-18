@@ -15,6 +15,10 @@ dependencies {
     testImplementation ("com.codeborne:selenide:7.2.1")
 }
 
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
 test {
     useJUnitPlatform()
 }
