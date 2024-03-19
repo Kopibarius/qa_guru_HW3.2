@@ -30,10 +30,13 @@ public class FillFormTest {
         $(byText("Music")).click();
         File fileToUpload = new File("src/test/java/Resourses/1653613466_10-funart-pro-p-krisa-za-kompom-krasivo-foto-10.jpg");
         $("#uploadPicture").uploadFile(fileToUpload);
-        $("#currentAddress").setValue("Гравство Капибариуса");
+            $("#currentAddress").setValue("Гравство Капибариуса");
         $("#react-select-3-input").setValue("Haryana").pressEnter();
         $("#react-select-4-input").setValue("Karnal").pressEnter();
         $("#submit").click();
+        //$(".css-tlfecz-indicatorContainer").click();
+        //$(byText("Haryana")).click();
+        //$(".css-19bqh2r").$(byText("Karnal")).click();
         $x("//table/tbody/tr[1]/td[2]").shouldHave(text("Egor Melnichyk"));
         $x("//table/tbody/tr[2]/td[2]").shouldHave(text("egor.mel8@gmail.com"));
         $x("//table/tbody/tr[3]/td[2]").shouldHave(text("Male"));
