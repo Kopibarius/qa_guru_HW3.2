@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 import java.io.File;
 
 import static com.codeborne.selenide.Condition.text;
+import static com.codeborne.selenide.Selectors.byTagAndText;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
@@ -28,7 +29,9 @@ public class FillFormTest {
         $("#genterWrapper").$(byText("Male")).click();
         $("#userNumber").setValue("9998887766");
         $("#dateOfBirthInput").click();
-        $x("//select[@class='react-datepicker__month-select']").selectOptionByValue("8");
+//        $x("//select[@class='react-datepicker__month-select']").selectOptionByValue("8");
+//        $x("//select[@class='react-datepicker__month-select']").selectOptionContainingText("September");
+        $("select.react-datepicker__month-select").selectOptionContainingText("September");
         $x("//select[@class='react-datepicker__year-select']").selectOptionByValue("2002");
         $(".react-datepicker__day--008:not(.react-datepicker__day--outside-month)").click();
         //$x("//div[@class='subjects-auto-complete__value-container subjects-auto-complete__value-container--is-multi css-1hwfws3']").click();
