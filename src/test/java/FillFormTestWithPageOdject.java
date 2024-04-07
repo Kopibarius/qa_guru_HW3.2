@@ -2,13 +2,11 @@ import org.junit.jupiter.api.Test;
 
 import java.io.File;
 
-import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Selenide.$;
-
 public class FillFormTestWithPageOdject extends TestBase {
 
-    File fileToUpload = new File("src/test/java/Resourses/1653613466_10-funart-pro-p-krisa-za-kompom-krasivo-foto-10.jpg");
 
+    String fileName = "1653613466_10-funart-pro-p-krisa-za-kompom-krasivo-foto-10.jpg";
+    File fileToUpload = new File("src/test/java/Resourses/" + fileName);
     String firstName = "Egor";
     String lastName = "Melnichyk";
     String email = "egor.mel8@gmail.com";
@@ -22,6 +20,16 @@ public class FillFormTestWithPageOdject extends TestBase {
     String address = "Гравство Капибариуса";
     String state = "Haryana";
     String city = "Karnal";
+    String checkPersonality = "Student Name";
+    String checkEmail = "Student Email";
+    String checkGender = "Gender";
+    String checkMobile = "Mobile";
+    String checkDateOfBirth = "Date of Birth";
+    String checkSubjects = "Subjects";
+    String checkHobbies = "Hobbies";
+    String checkFileName = "Picture";
+    String checkAddress = "Address";
+    String checkStateAndCity = "State and City";
 
     @Test
     void successRegistrationTest() {
@@ -39,19 +47,19 @@ public class FillFormTestWithPageOdject extends TestBase {
                 .setAdress(address)
                 .setState(state)
                 .setCity(city)
-                .clickSabmitButton();
+                .clickSabmitButton()
+                .checkModalHead()
+                .checkModalValue(checkPersonality, firstName + " " + lastName)
+                .checkModalValue(checkEmail, email)
+                .checkModalValue(checkGender, gender)
+                .checkModalValue(checkMobile, number)
+                .checkModalValue(checkDateOfBirth, dayOfBirth + " " + monthOfBirth + "," + yearOfBirth)
+                .checkModalValue(checkSubjects, subject)
+                .checkModalValue(checkHobbies, hobbie)
+                .checkModalValue(checkFileName, fileName)
+                .checkModalValue(checkAddress, address)
+                .checkModalValue(checkStateAndCity, state + " " + city);
 
-        $("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"));
-        $(".table-responsive").shouldHave(text("Egor Melnichyk"),
-                text("egor.mel8@gmail.com"),
-                text("Male"),
-                text("9998887766"),
-                text("10 September,2002"),
-                text("Math"),
-                text("Music"),
-                text("1653613466_10-funart-pro-p-krisa-za-kompom-krasivo-foto-10.jpg"),
-                text("Гравство Капибариуса"),
-                text("Haryana Karnal")
-        );
+//
     }
 }

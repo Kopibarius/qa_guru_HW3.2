@@ -2,6 +2,7 @@ package pages;
 
 import com.codeborne.selenide.SelenideElement;
 import pages.components.CalendarComponent;
+import pages.components.ModalFormComponent;
 
 import java.io.File;
 
@@ -13,6 +14,7 @@ import static com.codeborne.selenide.Selenide.open;
 public class RegistrationPage {
 
     CalendarComponent calendarComponent = new CalendarComponent();
+    ModalFormComponent modalCompanent = new ModalFormComponent();
     private SelenideElement firstNameInput = $("#firstName");
     private SelenideElement firstLastInput = $("#lastName");
     private SelenideElement emailInput = $("#userEmail");
@@ -100,4 +102,14 @@ public class RegistrationPage {
         calendarComponent.setDateOfBirth(day, month, year);
         return this;
     }
+
+    public RegistrationPage checkModalHead() {
+        modalCompanent.modalHead();
+        return this;
+    }
+    public RegistrationPage checkModalValue(String key, String value) {
+        modalCompanent.modalValue(key, value);
+        return this;
+    }
+
 }
