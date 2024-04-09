@@ -1,3 +1,4 @@
+import Utils.RandomDateUtils;
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
@@ -6,6 +7,7 @@ import pages.RegistrationPage;
 import static com.codeborne.selenide.Selenide.sleep;
 
 public class TestBase {
+    public String[] genders = {"Male", "Female", "Other"};
     RegistrationPage registrationPage = new RegistrationPage();
 
     @BeforeAll
