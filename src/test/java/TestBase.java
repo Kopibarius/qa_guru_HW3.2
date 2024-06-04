@@ -14,8 +14,11 @@ public class TestBase {
 
     @BeforeAll
     static void beforeAll() {
-        Configuration.browserSize = "1920x1080";
         Configuration.pageLoadTimeout = 1200000;
+        Configuration.browser = "chrome";
+        Configuration.browserVersion = "100.0";
+        Configuration.browserSize = "1920x1080";
+        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
         SelenideLogger.addListener("allure", new AllureSelenide());
     }
 }
