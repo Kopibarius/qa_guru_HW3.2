@@ -37,9 +37,9 @@ public class FillFormTest {
         File fileToUpload = new File("src/test/java/Resourses/1653613466_10-funart-pro-p-krisa-za-kompom-krasivo-foto-10.jpg");
         $("#uploadPicture").uploadFile(fileToUpload);
         $("#currentAddress").setValue("Гравство Капибариуса");
-        $("#state").click();
+        $(byText("Select State")).click();
         $("#stateCity-wrapper").$(byText("Haryana")).click();
-        $("#city").click();
+        $(byText("Select City")).click();
         $("#stateCity-wrapper").$(byText("Karnal")).click();
         $("#submit").click();
 

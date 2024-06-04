@@ -39,7 +39,7 @@ public class FillFormTestWithPageOdject extends TestBase {
                 .setLastName(lastName)
                 .setEmail(email)
                 .setGender(gender)
-                .setNamber(number)
+                .setNumber(number)
                 .setDateOfBirth(dayOfBirth, monthOfBirth, yearOfBirth)
                 .setSubject(subject)
                 .setHobbies(hobbie)

@@ -24,9 +24,9 @@ public class RegistrationPage {
     private SelenideElement hobbiesInput = $("#hobbiesWrapper");
     private SelenideElement fileInput = $("#uploadPicture");
     private SelenideElement adressInput = $("#currentAddress");
-    private SelenideElement stateInput = $("#state");
+    private SelenideElement stateInput = $(byText("Select State"));
     private SelenideElement stateCityDropDown = $("#stateCity-wrapper");
-    private SelenideElement cityInput = $("#city");
+    private SelenideElement cityInput = $(byText("Select City"));
     private SelenideElement submitButton = $("#submit");
 
     public RegistrationPage openRegistrationPage() {
@@ -57,7 +57,7 @@ public class RegistrationPage {
         return this;
     }
 
-    public RegistrationPage setNamber(String namber) {
+    public RegistrationPage setNumber(String namber) {
         namberInput.setValue(namber);
         return this;
     }
@@ -109,6 +109,7 @@ public class RegistrationPage {
         modalCompanent.modalHead();
         return this;
     }
+
     public RegistrationPage checkModalValue(String key, String value) {
         modalCompanent.modalValue(key, value);
         return this;
