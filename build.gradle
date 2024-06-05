@@ -51,3 +51,14 @@ tasks.register('tests_on_selenoid', Test) {
         includeTags 'Selenoid'
     }
 }
+
+test {
+    useJUnitPlatform()
+}
+
+
+tests_on_selenoid {
+    useJUnitPlatform {
+        includeTags 'Selenoid'
+    }
+}
