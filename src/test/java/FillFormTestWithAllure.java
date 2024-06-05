@@ -1,3 +1,5 @@
+import io.qameta.allure.Feature;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.io.File;
@@ -35,6 +37,8 @@ public class FillFormTestWithAllure extends TestBase {
     String checkStateAndCity = "State and City";
 
     @Test
+    @DisplayName("Успешная регистрация")
+    @Feature("Форма регистрации")
     void successRegistrationTestWithAllure() {
 
         step("Открыть страницу регистрации в браузере", () -> {
