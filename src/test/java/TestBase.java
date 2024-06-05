@@ -18,9 +18,9 @@ public class TestBase {
     static void beforeAll() {
         Configuration.pageLoadTimeout = 1200000;
         Configuration.browser = "chrome";
-        Configuration.browserVersion = "100.0";
-        Configuration.browserSize = "1920x1080";
-        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
+        Configuration.browserVersion = System.getProperty("browser_version","100.0");
+        Configuration.browserSize = System.getProperty("browser_size","1920x1080");
+        Configuration.remote = "https://user1:1234@" + System.getProperty("browser_host","selenoid.autotests.cloud/wd/hub");;
 
         SelenideLogger.addListener("allure", new AllureSelenide());
 

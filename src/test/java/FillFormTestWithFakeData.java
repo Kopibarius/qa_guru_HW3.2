@@ -1,9 +1,11 @@
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import java.io.File;
 
 import static Utils.RandomDateUtils.*;
 
+@Tag("Selenoid")
 public class FillFormTestWithFakeData extends TestBase {
 
 

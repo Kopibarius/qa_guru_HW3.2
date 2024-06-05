@@ -15,19 +15,19 @@ public class RegistrationPage {
 
     CalendarComponent calendarComponent = new CalendarComponent();
     ModalFormComponent modalCompanent = new ModalFormComponent();
-    private SelenideElement firstNameInput = $("#firstName");
-    private SelenideElement firstLastInput = $("#lastName");
-    private SelenideElement emailInput = $("#userEmail");
-    private SelenideElement genderInput = $("#genterWrapper");
-    private SelenideElement namberInput = $("#userNumber");
-    private SelenideElement subjectInput = $("#subjectsInput");
-    private SelenideElement hobbiesInput = $("#hobbiesWrapper");
-    private SelenideElement fileInput = $("#uploadPicture");
-    private SelenideElement adressInput = $("#currentAddress");
-    private SelenideElement stateInput = $(byText("Select State"));
-    private SelenideElement stateCityDropDown = $("#stateCity-wrapper");
-    private SelenideElement cityInput = $(byText("Select City"));
-    private SelenideElement submitButton = $("#submit");
+    private final SelenideElement firstNameInput = $("#firstName");
+    private final SelenideElement firstLastInput = $("#lastName");
+    private final SelenideElement emailInput = $("#userEmail");
+    private final SelenideElement genderInput = $("#genterWrapper");
+    private final SelenideElement numberInput = $("#userNumber");
+    private final SelenideElement subjectInput = $("#subjectsInput");
+    private final SelenideElement hobbiesInput = $("#hobbiesWrapper");
+    private final SelenideElement fileInput = $("#uploadPicture");
+    private final SelenideElement adresInput = $("#currentAddress");
+    private final SelenideElement stateInput = $(byText("Select State"));
+    private final SelenideElement stateCityDropDown = $("#stateCity-wrapper");
+    private final SelenideElement cityInput = $(byText("Select City"));
+    private final SelenideElement submitButton = $("#submit");
 
     public RegistrationPage openRegistrationPage() {
         open("https://demoqa.com/automation-practice-form");
@@ -58,7 +58,7 @@ public class RegistrationPage {
     }
 
     public RegistrationPage setNumber(String namber) {
-        namberInput.setValue(namber);
+        numberInput.setValue(namber);
         return this;
     }
 
@@ -78,7 +78,7 @@ public class RegistrationPage {
     }
 
     public RegistrationPage setAdress(String adress) {
-        adressInput.setValue(adress);
+        adresInput.setValue(adress);
         return this;
     }
 
