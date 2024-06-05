@@ -1,0 +1,4 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Wed Jun 05 13:40:31 GMT 2024","Wed Jun 05 13:40:50 GMT 2024","18499","","FillFormTestWithPageOdject","","FillFormTestWithPageOdject","successRegistrationTest","successRegistrationTest()",""
+"passed","Wed Jun 05 13:39:48 GMT 2024","Wed Jun 05 13:40:13 GMT 2024","24577","","FillFormTestWithAllure","","FillFormTestWithAllure","successRegistrationTestWithAllure","Успешная регистрация",""
+"passed","Wed Jun 05 13:40:13 GMT 2024","Wed Jun 05 13:40:31 GMT 2024","18117","","FillFormTestWithFakeData","","FillFormTestWithFakeData","successRegistrationTest","successRegistrationTest()",""
