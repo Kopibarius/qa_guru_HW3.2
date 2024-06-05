@@ -1,0 +1,2 @@
+[2024-06-05T09:19:05.728Z] [SEVERE] https://demoqa.com/automation-practice-form - Failed to load resource: the server responded with a status of 502 (Bad Gateway)
+[2024-06-05T09:19:05.757Z] [SEVERE] https://demoqa.com/favicon.ico - Failed to load resource: the server responded with a status of 502 (Bad Gateway)
