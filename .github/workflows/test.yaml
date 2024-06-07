@@ -18,8 +18,7 @@ jobs:
       - uses: Xotabu4/selenoid-github-action@v2
       # запускаем тесты
       - run: ./gradlew clean tests_on_selenoid -Dbrowser_version="100.0" -Dbrowser_size="1920x1080" -Dbrowser_host="selenoid.autotests.cloud/wd/hub"
-      - run: |
-          curl -X POST -H "Content-Type:application/json" https://api.telegram.org/bot6416903500:AAEECKUKlK09M2VxYCmr4ZzcgdR824Xvb_0/sendMessage?chat_id=-1002175105755"&"text=Hello%20World
+      - run: java "-DconfigFile=notification/telegram.json" -jar notification/allure-notifications-4.6.1.jar
       # скачиваем историю тестов
       - uses: actions/checkout@v2
         if: always()
