@@ -18,7 +18,6 @@ jobs:
       - uses: Xotabu4/selenoid-github-action@v2
       # запускаем тесты
       - run: ./gradlew clean tests_on_selenoid -Dbrowser_version="100.0" -Dbrowser_size="1920x1080" -Dbrowser_host="selenoid.autotests.cloud/wd/hub"
-      - run: java "-DconfigFile=notification/telegram.json" -jar notification/allure-notifications-4.6.1.jar
       # скачиваем историю тестов
       - uses: actions/checkout@v2
         if: always()
@@ -41,4 +40,6 @@ jobs:
           PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PUBLISH_BRANCH: gh-pages
           PUBLISH_DIR: allure-history
-        
+      # отправляем отчет в тг
+      - run: java "-DconfigFile=notification/telegram.json" -jar notification/allure-notifications-4.6.1.jar
+
