@@ -4,7 +4,7 @@
     "environment": "some env",
     "comment": "some comment",
     "reportLink": "",
-    "language": "eu",
+    "language": "ru",
     "messenger": "telegram",
     "allureFolder": "build/reports/allure-report/allureReport",
     "enableChart": true
